@@ -1,0 +1,164 @@
+Microsoft Windows [Versione 10.0.26200.8655]
+(c) Microsoft Corporation. Tutti i diritti riservati.
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>pip install requests pandas python-dotenv tqdm
+Requirement already satisfied: requests in c:\users\francesco\anaconda3\lib\site-packages (2.32.5)
+Requirement already satisfied: pandas in c:\users\francesco\anaconda3\lib\site-packages (2.3.3)
+Requirement already satisfied: python-dotenv in c:\users\francesco\anaconda3\lib\site-packages (1.1.0)
+Requirement already satisfied: tqdm in c:\users\francesco\anaconda3\lib\site-packages (4.67.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\francesco\anaconda3\lib\site-packages (from requests) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\francesco\anaconda3\lib\site-packages (from requests) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\francesco\anaconda3\lib\site-packages (from requests) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\francesco\anaconda3\lib\site-packages (from requests) (2026.1.4)
+Requirement already satisfied: numpy>=1.26.0 in c:\users\francesco\anaconda3\lib\site-packages (from pandas) (2.3.5)
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\francesco\anaconda3\lib\site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in c:\users\francesco\anaconda3\lib\site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in c:\users\francesco\anaconda3\lib\site-packages (from pandas) (2025.2)
+Requirement already satisfied: colorama in c:\users\francesco\anaconda3\lib\site-packages (from tqdm) (0.4.6)
+Requirement already satisfied: six>=1.5 in c:\users\francesco\anaconda3\lib\site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 01_download_steam_applist.py
+python: can't open file 'C:\\Users\\Francesco\\OneDrive\\Desktop\\Steam_Project\\01_download_steam_applist.py': [Errno 2] No such file or directory
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>dir
+ Il volume nell'unità C non ha etichetta.
+ Numero di serie del volume: EC10-AB4F
+
+ Directory di C:\Users\Francesco\OneDrive\Desktop\Steam_Project
+
+12/06/2026  15:47    <DIR>          .
+12/06/2026  15:44    <DIR>          ..
+12/06/2026  15:55                46 .env.txt
+12/06/2026  15:56             1.522 01_download_steam_applist.py.txt
+12/06/2026  15:47                 0 02_download_steamspy_details.py.txt
+12/06/2026  15:44    <DIR>          data
+               3 File          1.568 byte
+               3 Directory  331.129.450.496 byte disponibili
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>ren 01_download_steam_applist.py.txt 01_download_steam_applist.py
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 01_download_steam_applist.py
+Traceback (most recent call last):
+  File "C:\Users\Francesco\OneDrive\Desktop\Steam_Project\01_download_steam_applist.py", line 13, in <module>
+    raise ValueError("API key mancante. Controlla il file .env.")
+ValueError: API key mancante. Controlla il file .env.
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>dir
+ Il volume nell'unità C non ha etichetta.
+ Numero di serie del volume: EC10-AB4F
+
+ Directory di C:\Users\Francesco\OneDrive\Desktop\Steam_Project
+
+12/06/2026  15:58    <DIR>          .
+12/06/2026  15:44    <DIR>          ..
+12/06/2026  15:55                46 .env.txt
+12/06/2026  15:56             1.522 01_download_steam_applist.py
+12/06/2026  15:47                 0 02_download_steamspy_details.py.txt
+12/06/2026  15:44    <DIR>          data
+               3 File          1.568 byte
+               3 Directory  331.131.752.448 byte disponibili
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>ren .env.txt .env
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>ren 02_download_steamspy_details.py.txt 02_download_steamspy_details.py
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>dir
+ Il volume nell'unità C non ha etichetta.
+ Numero di serie del volume: EC10-AB4F
+
+ Directory di C:\Users\Francesco\OneDrive\Desktop\Steam_Project
+
+12/06/2026  16:00    <DIR>          .
+12/06/2026  15:44    <DIR>          ..
+12/06/2026  15:55                46 .env
+12/06/2026  15:56             1.522 01_download_steam_applist.py
+12/06/2026  15:47                 0 02_download_steamspy_details.py
+12/06/2026  15:44    <DIR>          data
+               3 File          1.568 byte
+               3 Directory  331.128.295.424 byte disponibili
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 01_download_steam_applist.py
+Traceback (most recent call last):
+  File "C:\Users\Francesco\OneDrive\Desktop\Steam_Project\01_download_steam_applist.py", line 52, in <module>
+    df = download_steam_app_list()
+  File "C:\Users\Francesco\OneDrive\Desktop\Steam_Project\01_download_steam_applist.py", line 35, in download_steam_app_list
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Francesco\anaconda3\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://partner.steam-api.com/IStoreService/GetAppList/v1/?key=5F999A45B206FC383BE34384632B0C7C&input_json=%7B%22include_games%22%3A+true%2C+%22include_dlc%22%3A+false%2C+%22include_software%22%3A+false%2C+%22include_videos%22%3A+false%2C+%22include_hardware%22%3A+false%2C+%22max_results%22%3A+50000%2C+%22last_appid%22%3A+0%7D
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 01_download_steam_applist.py
+Traceback (most recent call last):
+  File "C:\Users\Francesco\OneDrive\Desktop\Steam_Project\01_download_steam_applist.py", line 17, in <module>
+    df = download_steam_app_list()
+  File "C:\Users\Francesco\OneDrive\Desktop\Steam_Project\01_download_steam_applist.py", line 9, in download_steam_app_list
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Francesco\anaconda3\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.steampowered.com/ISteamApps/GetAppList/v2/
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 01_download_steam_applist.py
+Scarico pagina 0 da SteamSpy...
+File creato: data/steam_games_details.csv
+Numero giochi scaricati: 1000
+     appid                              name         developer        publisher  ... price  initialprice  discount      ccu
+0      730  Counter-Strike: Global Offensive             Valve            Valve  ...     0             0         0  1013936
+1  1172470                      Apex Legends           Respawn  Electronic Arts  ...     0             0         0   124262
+2   578080               PUBG: BATTLEGROUNDS  PUBG Corporation    KRAFTON, Inc.  ...     0             0         0   314682
+3  1623730                          Palworld        Pocketpair       Pocketpair  ...  2999          2999         0    18028
+4      440                   Team Fortress 2             Valve            Valve  ...     0             0         0    43819
+
+[5 rows x 17 columns]
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 03_clean_steam_data.py
+python: can't open file 'C:\\Users\\Francesco\\OneDrive\\Desktop\\Steam_Project\\03_clean_steam_data.py': [Errno 2] No such file or directory
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 03_clean_steam_data.py
+python: can't open file 'C:\\Users\\Francesco\\OneDrive\\Desktop\\Steam_Project\\03_clean_steam_data.py': [Errno 2] No such file or directory
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>dir
+ Il volume nell'unità C non ha etichetta.
+ Numero di serie del volume: EC10-AB4F
+
+ Directory di C:\Users\Francesco\OneDrive\Desktop\Steam_Project
+
+12/06/2026  16:07    <DIR>          .
+12/06/2026  15:44    <DIR>          ..
+12/06/2026  15:55                46 .env
+12/06/2026  16:05             1.108 01_download_steam_applist.py
+12/06/2026  15:47                 0 02_download_steamspy_details.py
+12/06/2026  16:07             3.015 03_clean_steam_data.py.txt
+12/06/2026  16:05    <DIR>          data
+               4 File          4.169 byte
+               3 Directory  331.124.158.464 byte disponibili
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>ren 03_clean_steam_data.py.txt 03_clean_steam_data.py
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 03_clean_steam_data.py
+File creato: data/steam_games_clean.csv
+Numero righe: 1000
+Numero colonne: 19
+     appid                              name         developer  ... median_forever      ccu  discount
+0      730  Counter-Strike: Global Offensive             Valve  ...              0  1013936         0
+1  1172470                      Apex Legends           Respawn  ...              0   124262         0
+2   578080               PUBG: BATTLEGROUNDS  PUBG Corporation  ...              0   314682         0
+3  1623730                          Palworld        Pocketpair  ...              0    18028         0
+4      440                   Team Fortress 2             Valve  ...              0    43819         0
+
+[5 rows x 19 columns]
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>pip install mysql-connector-python
+Collecting mysql-connector-python
+  Downloading mysql_connector_python-9.7.0-cp313-cp313-win_amd64.whl.metadata (11 kB)
+Downloading mysql_connector_python-9.7.0-cp313-cp313-win_amd64.whl (17.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.7/17.7 MB 54.5 MB/s  0:00:00
+Installing collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-9.7.0
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>notepad 04_import_to_mysql.py
+
+C:\Users\Francesco\OneDrive\Desktop\Steam_Project>python 04_import_to_mysql.py
+Inserisci la password MySQL dell'utente root:
+Importazione completata. Righe importate: 1000
